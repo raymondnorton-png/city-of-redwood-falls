@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help with City text messages | City of Redwood Falls</title>
+<style>
+:root { --navy:#1b365d; --gold:#c4a35a; --bg:#f4f1ea; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Georgia,"Times New Roman",serif; color:#1a1a1a; background:var(--bg); }
+header,footer { background:var(--navy); color:#fff; }
+header { padding:1.2rem 1.5rem 1rem; }
+header h1 { margin:0; font-size:1.45rem; }
+header p { margin:.35rem 0 0; font-family:Arial,Helvetica,sans-serif; font-size:.95rem; opacity:.9; }
+nav { margin-top:.75rem; font-family:Arial,Helvetica,sans-serif; }
+nav a { color:#f0e0b0; margin-right:1rem; text-decoration:none; }
+nav a:hover, nav a[aria-current="page"] { text-decoration:underline; }
+main { max-width:760px; margin:0 auto; padding:1.5rem; }
+.card { background:#fff; border:1px solid #ddd6c8; padding:1.2rem 1.4rem; margin:0 0 1rem; }
+h2 { color:var(--navy); font-size:1.12rem; margin:0 0 .7rem; }
+p,li { line-height:1.55; }
+.disclaimer,.attest { font-family:Arial,Helvetica,sans-serif; font-size:.88rem; background:#f7f3ea; border-left:4px solid var(--gold); padding:.85rem 1rem; }
+iframe.form { width:100%; min-height:1240px; border:0; background:#fff; }
+.missing { font-family:Arial,Helvetica,sans-serif; background:#fff3cd; padding:.8rem 1rem; }
+footer { font-family:Arial,Helvetica,sans-serif; font-size:.8rem; text-align:center; padding:1.1rem 1.5rem; }
+footer a { color:#f0e0b0; }
+a { color:var(--navy); }
+</style>
+</head>
+<body data-form="help">
+<header>
+<h1>Help with City text messages</h1>
+<p>City of Redwood Falls</p>
+<nav>
+<a href="index.html">Opt in</a> <a href="help.html" aria-current="page">Help</a> <a href="opt-out.html">Opt out</a> <a href="privacy.html">Privacy</a> <a href="terms.html">SMS Terms</a>
+</nav>
+</header>
+<main>
+<section class="card">
+<h2>HELP</h2>
+<p>City of Redwood Falls informational text messages. Call 507-616-7400 or email <a href="mailto:info@ci.redwood-falls.mn.us">info@ci.redwood-falls.mn.us</a>. City Hall hours: Monday–Friday, 8:00 a.m.–4:30 p.m. Reply STOP to 507-616-7400 to opt out. Message and data rates may apply.</p>
+</section>
+<p id="form-missing" class="missing" hidden>Add the help form URL to config.js before this page will show the form.</p>
+<section class="card"><iframe id="sms-form" class="form" title="SMS help"></iframe></section>
+</main>
+<footer>
+City of Redwood Falls · 333 South Washington Street · PO Box 526 · Redwood Falls, MN 56283<br>
+507-616-7400 · <a href="mailto:info@ci.redwood-falls.mn.us">info@ci.redwood-falls.mn.us</a>
+</footer>
+<script src="config.js"></script>
+<script>
+(function(){
+  var key=document.body.getAttribute("data-form");
+  var frame=document.getElementById("sms-form");
+  var warn=document.getElementById("form-missing");
+  if(!key||!frame) return;
+  var forms=window.CRF_SMS_FORMS||{};
+  var url=forms[key]||"";
+  if(!url||url.indexOf("PASTE_")===0||url.indexOf("http")!==0){
+    if(warn) warn.hidden=false;
+    frame.hidden=true;
+    return;
+  }
+  frame.src=url+(url.indexOf("?")>=0?"&":"?")+"embedded=true";
+})();
+</script>
+</body>
+</html>
