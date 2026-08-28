@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text Messages | City of Redwood Falls</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-form="optin">
+  <header>
+    <h1>City of Redwood Falls text messages</h1>
+    <p>Informational messages about city accounts and services</p>
+    <nav>
+      <a href="index.html" aria-current="page">Opt in</a>
+      <a href="help.html">Help</a>
+      <a href="opt-out.html">Opt out</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">SMS Terms</a>
+    </nav>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Program</h2>
+      <p>
+        The City of Redwood Falls sends informational text messages about utility accounts,
+        billing, service requests, permits, inspections, and other city business.
+        The City does not use this program for advertising or promotions.
+      </p>
+      <p class="disclaimer">
+        City of Redwood Falls: You agree to receive informational text messages about your
+        utility account, service requests, permits, and related city business.
+        Message frequency varies. Message and data rates may apply.
+        Reply STOP to opt out. Reply HELP for help.
+        <a href="privacy.html">Privacy Policy</a> and
+        <a href="terms.html">SMS Terms</a>.
+      </p>
+      <p>You may also text START or YES to 507-616-7400.</p>
+    </section>
+    <p id="form-missing" class="missing" hidden>
+      Add the opt-in form URL to <code>config.js</code> before this page will show the form.
+    </p>
+    <section class="card">
+      <iframe id="sms-form" class="form" title="City of Redwood Falls SMS opt-in"></iframe>
+    </section>
+  </main>
+  <footer>
+    City of Redwood Falls · 333 South Washington Street · PO Box 526 · Redwood Falls, MN 56283<br>
+    507-616-7400 · <a href="mailto:info@ci.redwood-falls.mn.us">info@ci.redwood-falls.mn.us</a><br>
+    <a href="https://ci.redwood-falls.mn.us/">ci.redwood-falls.mn.us</a>
+  </footer>
+  <script src="config.js"></script>
+  <script src="js/embed-form.js"></script>
+</body>
+</html>
